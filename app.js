@@ -3,6 +3,8 @@ let app = express()
 
 let port = 3000
 
+app.use(require('./middleware/headers'))
+
 app.use('/api/test', (req, res) => {
   res.send('Server says, "Hello!"')
 })
