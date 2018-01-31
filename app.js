@@ -6,6 +6,7 @@ let port = 3000
 
 
 app.use(require('body-parser').json())
+app.use(require('body-parser').urlencoded())
 app.use(require('./middleware/headers'))
 app.use(require('./middleware/validate_user'))
 
