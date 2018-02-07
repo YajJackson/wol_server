@@ -4,6 +4,7 @@ let app = express()
 let sequelize = require('./db.js')
 let port = 3000
 
+sequelize.sync({force:true})
 
 app.use(require('body-parser').json())
 app.use(require('body-parser').urlencoded())
@@ -15,6 +16,7 @@ app.use('/api/test', (req, res) => {
 })
 
 app.use('/api/user', require('./routes/user'))
+app.use('/api/shoe', require('./routes/shoe'))
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
